@@ -1,7 +1,3 @@
-# shopping-cart
-1) Create and clone shopping-cart repo
-2) Create shopping_cart.py file in repo including the following code:
-
 # shopping_cart.py
 
 products = [
@@ -42,6 +38,3 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 print(products)
-
-3) Set up a virtual environment called (shopping-env)
-4) Run shopping_cart.py in your virtual environment to display the list of products.
