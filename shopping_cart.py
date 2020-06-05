@@ -37,4 +37,18 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
+# print(products)
+
+selected_id = input("Please input a product identifier: ") #string version of product id
+print(selected_id)
+print(type(selected_id))
+
+id_selection = []
+for p in products:
+    # print(p["id"])
+    id_selection.append(p["id"])
+
+# id_input = input("Please input a number:")
+#     print(id_selection)
+
+
