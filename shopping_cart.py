@@ -40,15 +40,13 @@ def to_usd(my_price):
 # print(products)
 
 selected_id = input("Please input a product identifier: ") #string version of product id
-print(selected_id)
-print(type(selected_id))
-
-id_selection = []
-for p in products:
-    # print(p["id"])
-    id_selection.append(p["id"])
-
-# id_input = input("Please input a number:")
-#     print(id_selection)
+# print(selected_id)
+# print(type(selected_id))
+#select a subset of the items in the list products[] based on a certain criterion (use list comprehension technique)
+matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+matching_product = matching_products[0]
+# print(matching_product)
+# print(type(matching_product)) #returns an empty list
+print("Selected Product: " + matching_product["name"] + " " + str(matching_product["price"]))
 
 
