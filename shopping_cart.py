@@ -40,19 +40,24 @@ def to_usd(my_price):
 # print(products)
 
 total_price = 0
+selected_ids = []
 
 while True:
-    selected_id = input("Please input a product identifier: ") #string version of product id
+    selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #string version of product id
     if selected_id == "DONE" or selected_id == "done":
         break
     else:
-        #select a subset of the items in the list products[] based on a certain criterion (use list comprehension technique)
-        matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-        matching_product = matching_products[0]
-        # print(matching_product)
-        # print(type(matching_product)) #returns an empty list
-        total_price = total_price + matching_product["price"]
-        print("Selected Product: " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+        selected_ids.append(selected_id)
+
+# print(selected_ids)
+
+for selected_id in selected_ids:
+    #select a subset of the items in the list products[] based on a certain criterion (use list comprehension technique)
+    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+    matching_product = matching_products[0]
+    total_price = total_price + matching_product["price"]
+    print("Selected Product: " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+
 
 print("TOTAL PRICE: " + str(to_usd(total_price))) #format as USD
 
