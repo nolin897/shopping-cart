@@ -46,17 +46,28 @@ def total_usd(my_price):
 total_price = 0
 selected_ids = []
 
+acceptable_inputs= []
+for p in products:
+    acceptable_inputs.append(p["id"])
+
 while True:
     selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #string version of product id
     if selected_id == "DONE" or selected_id == "done":
         break
-    else:
-        selected_ids.append(selected_id)
+    else:                               
+        if int(selected_id) in acceptable_inputs:
+            selected_ids.append(selected_id)
+        # elif selected_id == int:
+        #     print("Please enter a VALID product identifier...")
+        else:
+            print("Please enter a VALID product identifier...")    
+            # I found this method of indentation at the followig stackoverflow link: https://stackoverflow.com/questions/51229650/combine-while-and-if-else-in-python-3
 
 print("---------------------------------")
 
 print("ShopRite of Lincoln Park")
-print("www.shoprite.com/ShopRiteofLincolnPark")
+print("Call us at 1-800-746-7748")
+print("Or visit us on the web at www.shoprite.com/ShopRiteofLincolnPark")
 
 print("---------------------------------")
 
@@ -72,6 +83,7 @@ for selected_id in selected_ids:
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
     print(" ... " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+
 
 print("---------------------------------")
 
