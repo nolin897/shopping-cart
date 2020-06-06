@@ -1,4 +1,5 @@
 # shopping_cart.py
+import datetime
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -33,7 +34,10 @@ def to_usd(my_price):
 
     Returns: $4,000.44
     """
-    return f"${my_price:,.2f}" #> $12,000.71
+    return f"(${my_price:,.2f})" #> $12,000.71
+
+def total_usd(my_price):
+    return f"${my_price:,.2f}"
 
 # TODO: write some Python code here to produce the desired output
 
@@ -49,17 +53,37 @@ while True:
     else:
         selected_ids.append(selected_id)
 
-# print(selected_ids)
+print("---------------------------------")
 
+print("ShopRite of Lincoln Park")
+print("www.shoprite.com/ShopRiteofLincolnPark")
+
+print("---------------------------------")
+
+now = datetime.datetime.now()
+print("CHECKOUT AT: ", now.strftime("%Y-%m-%d %I:%M%p")) #> Hour, minute, and AM & PM directives from https://docs.python.org/3/library/datetime.html#date-objects
+
+print("---------------------------------")
+
+print("SELECTED PRODUCTS: ")
 for selected_id in selected_ids:
     #select a subset of the items in the list products[] based on a certain criterion (use list comprehension technique)
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
-    print("Selected Product: " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+    print(" ... " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
 
+print("---------------------------------")
 
-print("TOTAL PRICE: " + str(to_usd(total_price))) #format as USD
+print("SUBTOTAL: " + str(total_usd(total_price))) #format as USD
+print("TAX: " + str(total_usd(total_price*0.0875)))
+print("TOTAL: " + str(total_usd(total_price*1.0875)))
+
+print("---------------------------------")
+
+print("THANKS, SEE YOU AGAIN SOON!")
+
+print("---------------------------------")
 
 # OUTPUT REQUIREMENTS:
 # A grocery store name of your choice
