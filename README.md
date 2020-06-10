@@ -1,6 +1,16 @@
 SHOPPING CART PROJECT INSTRUCTIONS:
 
-To set up and run the Shopping Cart Project:
+To run the Shopping Cart Project:
+
+1) Set up a virtual environment called (shopping-env) and run the following command: 
+
+        pip install -r requirements.txt
+
+2) Run shopping_cart.py in your virtual environment.
+
+3) To print a receipt enter a product id from 1 to 20 and the enter DONE when finished.
+
+<!-- To set up and run the Shopping Cart Project:
 
 1) Create and clone shopping-cart repo with 
     
@@ -79,4 +89,4 @@ To create the script shopping_cart.py following the below steps:
     2) The amount of sales tax owed = 8.75% of the subtotal
     3) The after tax total
 
-5) Print a thank you message at the end of the receipt
+5) Print a thank you message at the end of the receipt -->
