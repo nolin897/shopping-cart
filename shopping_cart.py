@@ -1,4 +1,8 @@
 # shopping_cart.py
+
+from dotenv import load_dotenv
+import os
+
 import datetime
 
 products = [
@@ -54,14 +58,17 @@ while True:
     selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #string version of product id
     if selected_id == "DONE" or selected_id == "done":
         break
-    else:                               
-        if int(selected_id) in acceptable_inputs:
-            selected_ids.append(selected_id)
-        # elif selected_id == int:
-        #     print("Please enter a VALID product identifier...")
-        else:
+    else:
+        if selected_id.isalpha() == True:
             print("Please enter a VALID product identifier...")    
-            # I found this method of indentation at the followig stackoverflow link: https://stackoverflow.com/questions/51229650/combine-while-and-if-else-in-python-3
+        else:
+            if int(selected_id) in acceptable_inputs:
+                selected_ids.append(selected_id)
+            # elif selected_id == int:
+            #     print("Please enter a VALID product identifier...")
+            else:
+                print("Please enter a VALID product identifier...")    
+                # I found this method of indentation at the followig stackoverflow link: https://stackoverflow.com/questions/51229650/combine-while-and-if-else-in-python-3
 
 print("---------------------------------")
 
@@ -84,12 +91,16 @@ for selected_id in selected_ids:
     total_price = total_price + matching_product["price"]
     print(" ... " + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
 
+load_dotenv()
 
 print("---------------------------------")
 
+
+sales_tax_rate = os.environ.get("sales_tax")
+
 print("SUBTOTAL: " + str(total_usd(total_price))) #format as USD
-print("TAX: " + str(total_usd(total_price*0.0875)))
-print("TOTAL: " + str(total_usd(total_price*1.0875)))
+print("TAX: " + str(total_usd(total_price*float(sales_tax_rate))))
+print("TOTAL: " + str(total_usd(total_price*(1+float(sales_tax_rate)))))
 
 print("---------------------------------")
 

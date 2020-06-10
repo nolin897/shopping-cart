@@ -1,6 +1,13 @@
 SHOPPING CART PROJECT INSTRUCTIONS:
 
-1) Create and clone shopping-cart repo with a Readme.md file and a Python .gitignore file.
+To set up and run the Shopping Cart Project:
+
+1) Create and clone shopping-cart repo with 
+    
+    1) a Readme.md file
+    2) a Python .gitignore file
+    3) a .env file with your store's sales tax
+    4) a requirements.txt file with the python-dotenv package
 
 2) Create shopping_cart.py file in repo including the following code:
 
@@ -45,26 +52,31 @@ SHOPPING CART PROJECT INSTRUCTIONS:
 
             print(products)
 
-3) Set up a virtual environment called (shopping-env)
+3) Set up a virtual environment called (shopping-env) and run the following command: pip install -r requirements.txt
 
-4) Run shopping_cart.py in your virtual environment to display the list of products.
+4) Run shopping_cart.py in your virtual environment
 
-5) Begin by pulling in product Id's using a while loop. The while loop will need
+5) To print a receipt enter a product id from 1 to 20 and the enter DONE when finished.
+
+To create the script shopping_cart.py following the below steps: 
+
+1) Begin by pulling in product Id's using a while loop. The while loop will need
+    
     1) an input function
     2) a break when the user enters "DONE" or "done"
     3) a way to append inputs using the .append() method.
     4) A way to validate inputs and provide a message if invalid inputs are entered.
 
-6) Once this is completed, print
+2) Once this is completed, print
     1) The name of the store
     2) The store's url
     3) The checkout date and time in YYYY-MM-DD HH:MM AM/PM format
 
-7) Using a for loop, for each selected id in the empty list of selected ids, pull in the matching product's name and price in USD format.
+3) Using a for loop, for each selected id in the empty list of selected ids, pull in the matching product's name and price in USD format.
 
-8) For the totals print
+4) For the totals print
     1) The subtotal pretax
     2) The amount of sales tax owed = 8.75% of the subtotal
     3) The after tax total
 
-9) Print a thank you message at the end of the receipt
+5) Print a thank you message at the end of the receipt

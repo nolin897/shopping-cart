@@ -1,0 +1,1 @@
+python-dotenv # I realized this was python-dotenv from https://github.com/prof-rossetti/intro-to-python/blob/a026908618ce837882e27bd261f1331e90ada58f/exercises/emails-with-templates/requirements.txt
