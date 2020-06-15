@@ -2,13 +2,17 @@ SHOPPING CART PROJECT INSTRUCTIONS:
 
 To run the Shopping Cart Project:
 
+NB: These instrucitons assume you have downloaded this repository from https://github.com/nolin897/shopping-cart
+
 1) Set up a virtual environment called (shopping-env) and run the following command: 
 
         pip install -r requirements.txt
 
-2) Run shopping_cart.py in your virtual environment.
+2) Create a .env file and set your sales tax rate equal to the environment variable     sales_tax
 
-3) To print a receipt enter a product id from 1 to 20 and the enter DONE when finished.
+3) Run shopping_cart.py in your virtual environment.
+
+4) To print a receipt enter a product id from 1 to 20 and then enter DONE or done when finished.
 
 <!-- To set up and run the Shopping Cart Project:
 
