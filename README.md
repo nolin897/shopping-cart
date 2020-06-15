@@ -2,7 +2,7 @@ SHOPPING CART PROJECT INSTRUCTIONS:
 
 To run the Shopping Cart Project:
 
-NB: These instrucitons assume you have downloaded this repository from https://github.com/nolin897/shopping-cart
+NB: These instructions assume you have downloaded this repository from https://github.com/nolin897/shopping-cart
 
 1) Set up a virtual environment called (shopping-env) and run the following command: 
 
